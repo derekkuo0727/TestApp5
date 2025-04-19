@@ -1,0 +1,23 @@
+name: Xcode CI
+
+on:
+  push:
+    branches: [ feature/*, develop ]
+  pull_request:
+    branches: [ develop ]
+
+jobs:
+  build:
+    runs-on: macos-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Set up Xcode
+      uses: maxim-lobanov/setup-xcode@v1
+      with:
+        xcode-version: latest-stable
+    
+    - name: Build
+      run: |
+        xcodebuild clean build -project TestApp5.xcodeproj -scheme TestApp5 -destination 'platform=iOS Simulator,id=dvtdevice-DVTiOSDeviceSimulatorPlaceholder-iphonesimulator:placeholder,name=Any iOS Simulator Device' -allowProvisioningUpdates 
