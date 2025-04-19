@@ -20,4 +20,4 @@ jobs:
     
     - name: Build
       run: |
-        xcodebuild clean build -project TestApp5.xcodeproj -scheme TestApp5 -destination 'platform=iOS Simulator,name=iPhone 14' -allowProvisioningUpdates 
+        xcodebuild clean build -project TestApp5.xcodeproj -scheme TestApp5 -destination 'platform=iOS Simulator,name=Any iOS Simulator Device' -allowProvisioningUpdates 
